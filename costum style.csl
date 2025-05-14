@@ -47,13 +47,13 @@
       <term name="page-range-delimiter">-</term>
     </terms>
   </locale>
-  <!-- 主要责任者 -->
-   <macro name="author">
+  <!-- 主要责任者: Author names in lowercase with initials -->
+  <macro name="author">
     <names variable="author">
       <name>
-        <!-- Family name: Remove uppercase transformation -->
+        <!-- Remove uppercase for family name -->
         <name-part name="family"/>
-        <!-- Given name: Use initials with periods and proper spacing -->
+        <!-- Format given names as "A. S." instead of "A S" -->
         <name-part name="given" delimiter=" " form="short" initialize-with="."/>
       </name>
       <substitute>
@@ -188,7 +188,8 @@
   <macro name="secondary-contributors">
     <names variable="translator">
       <name>
-        <name-part name="family" text-case="uppercase"/>
+        <name-part name="family"/>
+        <name-part name="given" delimiter=" " form="short" initialize-with="."/>
       </name>
       <label form="short" prefix=", "/>
     </names>
@@ -197,7 +198,8 @@
   <macro name="container-contributors">
     <names variable="editor">
       <name>
-        <name-part name="family" text-case="uppercase"/>
+        <name-part name="family"/>
+        <name-part name="given" delimiter=" " form="short" initialize-with="."/>
       </name>
       <substitute>
         <names variable="editorial-director"/>
