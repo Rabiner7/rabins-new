@@ -48,10 +48,13 @@
     </terms>
   </locale>
   <!-- 主要责任者 -->
-  <macro name="author">
+   <macro name="author">
     <names variable="author">
       <name>
-        <name-part name="family" text-case="uppercase"/>
+        <!-- Family name: Remove uppercase transformation -->
+        <name-part name="family"/>
+        <!-- Given name: Use initials with periods and proper spacing -->
+        <name-part name="given" delimiter=" " form="short" initialize-with="."/>
       </name>
       <substitute>
         <names variable="composer"/>
